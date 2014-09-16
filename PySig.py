@@ -3,12 +3,12 @@
 
 
 
-#Import proper modules for script to communicate with Gmail API 
+#Import proper modules for script to communicate with Gmail API
 import gdata.apps.emailsettings.client
 
 
 
-#Beginning of script, input name and title 
+#Beginning of script, input name and title
 
 
 print 'Welcome to the Signature maker!'
@@ -24,18 +24,33 @@ confirmation = input('Is all this information correct?(yes/no)')
 #Confirm if information is correct, if incorrect ask the user to restart the program
 if confirmation == yes:
 	print 'Signature updated!'
-	print 'oh no! Please restart this program then' 
+	print 'oh no! Please restart this program then'
 
 
 #Declare Variable of Email Signature and assign it to the premade template
 email_signature = """
-						
+
 
 							%(name)s
+
+							</br>
+
 							%(title)s
+
+							</br>
+
 							<Company Name>
+
+							</br>
+
 							<Street Address> | <State, Zip Code>
-							<Phone Number> 
+
+							</br>
+
+							<Phone Number>
+
+							</br>
+
 							<company website>
 
 
@@ -52,6 +67,3 @@ client.ClientLogin(email='<input admin login email> ', password='<input admin pa
 client.UpdateSignature(username=username, signature=email_signature)
 
 print 'Signature updated!'
-
-
-
